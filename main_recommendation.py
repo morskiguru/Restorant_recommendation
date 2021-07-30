@@ -1,6 +1,5 @@
 #import files
+from LocationCreation import Restaurants
 
 
-intro()
-locations()
-cost()
+
