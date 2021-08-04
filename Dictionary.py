@@ -1,3 +1,4 @@
+import ast
 import json
 import random
 
@@ -24,7 +25,7 @@ for i in range(len(names)):
     k = random.choice(range(8))
     if k >= 5:
         k = 5
-    j = random.randint(1, 4)
+    j = random.randint(1, 3)
     m = random.randint(40, 101) / 10.0
 
     if j == 1:
@@ -42,10 +43,11 @@ for i in range(len(names)):
     Dictionary_information[names[i]] = [Locations[k][0]+" "+str(random.choice(range(100))), Locations[k][1]+1,
                                         j, m]
 print(Dictionary_information)
-Dict_file = open("Dict_data.py", "w")
+Dict_file = open("Dict_data.txt", "w")
 json.dump(Dictionary_information, Dict_file)
 Dict_file.close()
-
-kaka = open("Dict_data.py", "r")
-Dictionary_wuhu = kaka.read()
-print(Dictionary_wuhu)
+# Dictionary for restaurants key = name of restaurant, values = [address, location number, expenses score]
+test = open("Dict_data.txt", "r")
+Dictionary_test = test.read()
+Dictionary_test_dict = ast.literal_eval(Dictionary_test)
+print(Dictionary_test_dict)
