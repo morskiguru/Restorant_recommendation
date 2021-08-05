@@ -18,6 +18,7 @@ def location_choice(expanded_search=False):
                 user_location_input.append(int(user_input))
                 break
         elif expanded_search:
+            print("Lets expand the location of possible restaurants")
             print("""
             Add in which locations you may want to have a lovely meal
             1) Center of Town
