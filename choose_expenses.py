@@ -17,13 +17,14 @@ def choose_expenses(dictionary, location_list):
             cost_input = []
             while True:
                 user_cost_input = input("")
-                if int(user_cost_input) in range(1, 3, 1):
+                if int(user_cost_input) in range(1, 4, 1):
                     cost_input.append(int(user_cost_input))
                     break
+                else:
+                    print("Wrong input type a number from 1 to 3")
             for key in moderated_dictionary.keys():
                 if moderated_dictionary[key][2] in cost_input:
                     cost_dictionary[key] = moderated_dictionary[key]
-                    break
             break
         elif user_accept_money_filer == "n":
             cost_dictionary = moderated_dictionary

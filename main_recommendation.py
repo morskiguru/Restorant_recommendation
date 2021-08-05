@@ -3,7 +3,7 @@ import ast
 from intro import intro
 from location_choice import location_choice, user_location_input
 from choose_expenses import choose_expenses
-from print_possible_restaurants import give_recommendation
+from sorted_dictionary import sort_dictionary
 
 temporary = open("Dict_data.py", "r")
 dictionary_data = temporary.read()
@@ -14,7 +14,8 @@ reset = True
 while reset:
     intro()
     location_choice()
-    reset = give_recommendation(dictionary, user_location_input)
+    expenses = choose_expenses(dictionary, user_location_input)
+    sort_dictionary(expenses)
 
 
 
